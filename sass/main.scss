@@ -1,0 +1,431 @@
+@import "susy";
+@import "breakpoint";
+
+//reset
+@import "reset";
+
+//variables
+@import "variables";
+
+//mixins
+@import "mixins";
+
+//partials
+@import "buttons";
+@import "nav";
+
+//fonts
+
+
+//Susy settings
+$susy: (
+  columns: 12,
+  gutter-position: inside,
+  gutters: 0,
+  math: fluid,
+  output: float,
+);
+
+*, :after, :before {
+	box-sizing: border-box;
+}
+
+
+body {
+	font-size: 16px;
+	font-family: 'Helvetika', sans-serif;
+	font-weight: 400;
+	height: auto;
+	overflow-x: hidden;
+}
+
+
+img {
+	max-width: 100%;
+}
+
+section {
+	position: relative;
+}
+
+
+.container {
+	@include container(80%);
+	@include breakpoint($tablet) {
+		@include container(100%);
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+
+header {
+	padding: 2rem 0;
+	background: url(../img/header-bg.jpg) center center no-repeat;
+	@include bgs(cover);
+	.container {
+		.logo {
+			width: 250px;
+			float: left;
+			margin-bottom: 1rem;
+		}
+		.header-content {
+			clear: both;
+			padding-top: 2rem;
+			@include span(7);
+			float: left;
+			@include breakpoint($tablet) {
+				@include span(12);
+			}
+			h1 {
+				font-size: 2rem;
+				color: $white;
+			}
+			img {
+				margin-bottom: 2rem;
+			}
+			.head-desc {
+				color: #FFF;
+				margin-bottom: 2rem;
+			}
+			.btn {
+				margin-right: 1rem;
+				margin-bottom: 2rem;
+			}
+			.sec-desc {
+				color: $white;
+				font-size: 0.8rem;
+			}
+		}
+	}
+}
+
+.offer {
+	padding: 2rem 0;
+	background-color: $l-blue;
+	.offer-desc {
+		@include span(6);
+		@include breakpoint($tablet) {
+			@include span(12);
+		}
+		p {
+			margin-bottom: 1rem;
+			font-size: 0.9rem;
+		}
+	}
+	.main-char {
+		position: relative;
+		@include breakpoint($tablet) {
+			display: none;
+		}
+		img {
+			position: absolute;
+			right: -4%;
+			width: 44%;
+			bottom: -127px;
+		}
+	}
+}
+
+.points {
+	overflow: auto;
+	.row-1 {
+		.col {
+			@include span(4);
+			@include breakpoint($phone) {
+				@include span(12);
+			}
+			padding: 8rem 0 4rem 0;
+			text-align: center;
+			p {
+				display: inline-block;
+				color: $white;
+				font-size: 1.5rem;
+				position: relative;
+				z-index: 100;
+				-webkit-text-stroke-width: 1px;
+   				-webkit-text-stroke-color: darken($blue, 20);
+				text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+				&:before {
+					content: "";
+					display: block;
+					width: 120%;
+					height: 140%;
+					background-color: transparentize($blue, 0.5);
+					position: absolute;
+					top: -18%;
+					left: -10%;
+					-webkit-border-radius: 10px;
+					        border-radius: 10px;
+					z-index: -1;
+				}
+			}
+			a {
+				text-decoration: none;
+			}
+			&:nth-child(1) {
+				background: url(../img/program-bg-1.jpg) center center no-repeat;
+				@include bgs(cover);
+				p {
+					&:after {
+						content: "";
+						background: url(../img/char-1.png) center center no-repeat;
+						-webkit-background-size: contain;
+						     -o-background-size: contain;
+						        background-size: contain;
+						position: absolute;
+						width: 123px;
+					    height: 166px;
+					    left: 16%;
+					    z-index: -1;
+					    bottom: -120%;
+					}
+				}
+			}
+			&:nth-child(2) {
+				background: url(../img/program-bg-2.jpg) center center no-repeat;
+				@include bgs(cover);
+				p {
+					&:after {
+						content: "";
+						background: url(../img/char-2.png) center center no-repeat;
+						-webkit-background-size: contain;
+						     -o-background-size: contain;
+						        background-size: contain;
+						position: absolute;
+						width: 123px;
+					    height: 166px;
+					    left: -10%;
+					    z-index: -1;
+					    bottom: -120%;
+					}
+				}
+			}
+			&:nth-child(3) {
+				background: url(../img/program-bg-3.jpg) center center no-repeat;
+				@include bgs(cover);
+				p {
+					&:after {
+						content: "";
+						background: url(../img/char-3.png) center center no-repeat;
+						-webkit-background-size: contain;
+						     -o-background-size: contain;
+						        background-size: contain;
+						position: absolute;
+						width: 123px;
+					    height: 166px;
+					    left: 22%;
+					    z-index: -1;
+					    bottom: -120%;
+					}
+				}
+			}
+		}
+	}
+	.row-2 {
+		.col {
+			@include span(4);
+			@include breakpoint($phone) {
+				@include span(12);
+			}
+			padding: 8rem 0 4rem 0;
+			text-align: center;
+			p {
+				display: inline-block;
+				color: $white;
+				font-size: 1.5rem;
+				position: relative;
+				z-index: 100;
+				-webkit-text-stroke-width: 1px;
+   				-webkit-text-stroke-color: darken($blue, 20);
+				text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+				&:before {
+					content: "";
+					display: block;
+					width: 120%;
+					height: 140%;
+					background-color: transparentize($blue, 0.5);
+					position: absolute;
+					top: -18%;
+					left: -10%;
+					-webkit-border-radius: 10px;
+					        border-radius: 10px;
+					z-index: -1;
+				}
+			}
+			a {
+				text-decoration: none;
+			}
+			&:nth-child(1) {
+				background: url(../img/program-bg-4.jpg) center center no-repeat;
+				@include bgs(cover);
+				p {
+					&:after {
+						content: "";
+						background: url(../img/char-4.png) center center no-repeat;
+						-webkit-background-size: contain;
+						     -o-background-size: contain;
+						        background-size: contain;
+						position: absolute;
+						width: 169px;
+					    height: 166px;
+					    left: 12%;
+					    z-index: -1;
+					    bottom: -120%;
+					}
+				}
+			}
+			&:nth-child(2) {
+				background: url(../img/program-bg-5.jpg) center center no-repeat;
+				@include bgs(cover);
+				p {
+					&:after {
+						content: "";
+						background: url(../img/char-5.png) center center no-repeat;
+						-webkit-background-size: contain;
+						     -o-background-size: contain;
+						        background-size: contain;
+						position: absolute;
+						width: 123px;
+					    height: 166px;
+					    left: -7%;
+					    z-index: -1;
+					    bottom: -120%;
+					}
+				}
+			}
+			&:nth-child(3) {
+				background: url(../img/program-bg-6.jpg) center center no-repeat;
+				@include bgs(cover);
+				p {
+					&:after {
+						content: "";
+						background: url(../img/char-6.png) center center no-repeat;
+						-webkit-background-size: contain;
+						     -o-background-size: contain;
+						        background-size: contain;
+						position: absolute;
+						width: 123px;
+					    height: 166px;
+					    left: -2%;
+					    z-index: -1;
+					    bottom: -120%;
+					}
+				}
+			}
+		}
+	}
+}
+
+.space {
+	padding: 3rem 0;
+	.container {
+		.space-logo {
+			padding: 0 1rem 1rem 0;
+			@include span(4);
+			@include breakpoint($phone) {
+				@include span(12);
+			}
+		}
+		.space-desc {
+			padding: 2rem 0 1rem 2rem;
+			@include span(8);
+			@include breakpoint($phone) {
+				@include span(12);
+			}
+			p {
+				margin-bottom: 1rem;
+				span {
+					font-weight: 600;
+				}
+			}
+		}
+	}
+}
+
+.mnogo-pluh {
+	padding: 3rem 0;
+	.container {
+		.pluhi {
+			@include span(6);
+			@include breakpoint($tablet) {
+				@include span(12);
+			}
+			.row {
+				overflow: auto;
+				margin-bottom: 2rem;
+				.col {
+					text-align: center;
+					@include span(3);
+					img {
+						margin-bottom: 1rem;
+					}
+				}
+			}
+		}
+		.pluha-men {
+			position: relative;
+			@include breakpoint($tablet) {
+				display: none;
+			}
+			img {
+				position: absolute;
+				right: -4%;
+				width: 50%;
+				top: -145px;
+			}
+		}
+	}
+}
+
+footer {
+	background-color: $ftr;
+	padding: 2rem 0;
+	.container {
+		.socials {	
+			margin-bottom: 1rem;
+			a {
+				text-decoration: none;
+				i {
+					color: $white;
+					margin-right: 1rem;
+				}
+			}
+		}
+		.copy {
+			p {
+				color: $white;
+			}
+		}
+	}
+}
+
+.remodal {
+	background: transparent;
+	position: relative;
+	.text-modal {
+		margin-bottom: 2rem;
+		h4 {
+			color: $white;
+			font-size: 1.5rem;
+		}
+	}
+	.form-modal {
+		form {
+			input {
+				width: 100%;
+				margin-bottom: 1rem;
+				border: none;
+				padding: 0.5rem 1rem;
+				font-size: 2rem;
+				-webkit-border-radius: 10px;
+				        border-radius: 10px;
+			}
+		}
+	}
+	.chuvak {
+		position: absolute;
+		width: 40%;
+    	right: -36%;
+    	top: 13%;
+	}
+}
