@@ -30,7 +30,7 @@
                 <img src="img/grafficon-logo.png" alt="">
                 <p class="head-desc">С 29 апреля по 1 мая 2017 года на площадке Арт-пространства krem.space состоится фестиваль граффити и стрит-арта. «GRAFFICON».</p>
                 <a href="#visit" class="btn">Хочу посетить</a>
-                <a href="#" class="btn">Стать участником</a>
+                <a href="#signup" class="btn">Стать участником</a>
                 <p class="sec-desc">Мероприятие объединит в себе творческие сообщества разных направлений: стрит-арт, граффити, тату-мастеров.</p>
             </div>
         </div>
@@ -50,26 +50,38 @@
 
     <section class="points">
         <div class="row-1">
-            <div class="col">
-                <a href=""><p>ГРАФФИТИ-БАТЛ</p></a>
-            </div>
-            <div class="col">
-                <a href=""><p>ТАНЦЫ</p></a>
-            </div>
-            <div class="col">
-                <a href=""><p>МУЗЫКАЛЬНАЯ СЦЕНА</p></a>
-            </div>
+            <a href="#">
+                <div class="col col-1">
+                    <p>ГРАФФИТИ-БАТЛ <i class="fa fa-angle-double-right"></i></p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="col col-2">
+                    <p>ТАНЦЫ <i class="fa fa-angle-double-right"></i></p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="col col-3">
+                    <p>МУЗЫКАЛЬНАЯ СЦЕНА <i class="fa fa-angle-double-right"></i></p>
+                </div>
+            </a>
         </div>
         <div class="row-2">
-            <div class="col">
-                <a href=""><p>ТАТУИРОВЩИКИ</p></a>
-            </div>
-            <div class="col">
-                <a href=""><p>МАРКЕТ</p></a>
-            </div>
-            <div class="col">
-                <a href=""><p>ЛЕКТОРИИ</p></a>
-            </div>
+            <a href="">
+                <div class="col col-4">
+                    <p>ТАТУИРОВЩИКИ <i class="fa fa-angle-double-right"></i></p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="col col-5">
+                    <p>МАРКЕТ <i class="fa fa-angle-double-right"></i></p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="col col-6">
+                    <p>ЛЕКТОРИИ <i class="fa fa-angle-double-right"></i></p>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -106,7 +118,7 @@
                 </div>
                 <div class="row">
                     <a href="#visit" class="btn">ХОЧУ ПОСЕТИТЬ</a>
-                    <a href="#" class="btn">СТАТЬ УЧАСТНИКОМ</a>
+                    <a href="#signup" class="btn">СТАТЬ УЧАСТНИКОМ</a>
                 </div>
             </div>
             <div class="pluha-men"><img src="img/main-char-footer.png" alt=""></div>
@@ -127,6 +139,7 @@
         </div>
     </footer>
 
+    <!-- MODALS -->
     <div class="remodal" data-remodal-id="visit">
         <button data-remodal-action="close" class="remodal-close">
             <span></span>
@@ -148,8 +161,30 @@
        </div>
     </div>
 
+    <div class="remodal" data-remodal-id="signup">
+        <button data-remodal-action="close" class="remodal-close">
+            <span></span>
+            <span></span>
+        </button>
+        <div class="text-modal">
+            <h4>Заполните форму и мы свяжемся с Вами для уточнения деталей вашего участия в фестивале</h4>
+        </div>
+       <div class="form-modal">
+            <form action="javascript:void(0);" method="POST" id="myform">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="phone" id="phone" placeholder="Ваш номер телефона" required>
+                <input type="text" id="specialization" placeholder="Вид искусств" required>
+                <input type="submit"  id="rentvr" value="Отправить" class="btn">
+            </form>
+       </div>
+       <div id="error"></div>
+       <div class="chuvak">
+           <img src="img/main-char.png" alt="">
+       </div>
+    </div>
 
 
+    <!-- /MODALS -->
 
         <!-- Jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

@@ -62,6 +62,7 @@ header {
 	padding: 2rem 0;
 	background: url(../img/header-bg.jpg) center center no-repeat;
 	@include bgs(cover);
+	background-attachment: fixed;
 	.container {
 		.logo {
 			width: 250px;
@@ -131,20 +132,49 @@ header {
 	.row-1 {
 		.col {
 			@include span(4);
+			cursor: pointer;
 			@include breakpoint($phone) {
 				@include span(12);
 			}
 			padding: 8rem 0 4rem 0;
 			text-align: center;
+			
+			&:hover {
+				
+				p {
+					@include transform(translateY(-50%));
+					@include transition(0.6s);
+					i {
+						opacity: 1;
+						@include transition(0.6s);
+					}
+					&:before {
+						opacity: 0;
+						@include transition(0.6s);
+					}
+
+					&:after {
+						opacity: 0;
+						@include transition(0.6s);
+					}
+				}
+			}
 			p {
 				display: inline-block;
 				color: $white;
 				font-size: 1.5rem;
 				position: relative;
 				z-index: 100;
-				-webkit-text-stroke-width: 1px;
-   				-webkit-text-stroke-color: darken($blue, 20);
+				// -webkit-text-stroke-width: 1px;
+   	// 			-webkit-text-stroke-color: darken($blue, 20);
 				text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+				@include transition(0.6s);
+				
+				i {
+					position: absolute;
+					opacity: 0;
+					@include transition(0.6s);
+				}
 				&:before {
 					content: "";
 					display: block;
@@ -157,12 +187,18 @@ header {
 					-webkit-border-radius: 10px;
 					        border-radius: 10px;
 					z-index: -1;
+					@include transition(0.6s);
+					
+				}
+
+				&:after {
+					@include transition(0.6s);
 				}
 			}
 			a {
 				text-decoration: none;
 			}
-			&:nth-child(1) {
+			&.col-1 {
 				background: url(../img/program-bg-1.jpg) center center no-repeat;
 				@include bgs(cover);
 				p {
@@ -181,7 +217,7 @@ header {
 					}
 				}
 			}
-			&:nth-child(2) {
+			&.col-2 {
 				background: url(../img/program-bg-2.jpg) center center no-repeat;
 				@include bgs(cover);
 				p {
@@ -200,7 +236,7 @@ header {
 					}
 				}
 			}
-			&:nth-child(3) {
+			&.col-3 {
 				background: url(../img/program-bg-3.jpg) center center no-repeat;
 				@include bgs(cover);
 				p {
@@ -229,15 +265,42 @@ header {
 			}
 			padding: 8rem 0 4rem 0;
 			text-align: center;
+			&:hover {
+				
+				p {
+					@include transform(translateY(-50%));
+					@include transition(0.6s);
+					i {
+						opacity: 1;
+						@include transition(0.6s);
+					}
+					&:before {
+						opacity: 0;
+						@include transition(0.6s);
+					}
+
+					&:after {
+						opacity: 0;
+						@include transition(0.6s);
+					}
+				}
+			}
 			p {
 				display: inline-block;
 				color: $white;
 				font-size: 1.5rem;
 				position: relative;
 				z-index: 100;
-				-webkit-text-stroke-width: 1px;
-   				-webkit-text-stroke-color: darken($blue, 20);
+				// -webkit-text-stroke-width: 1px;
+   	// 			-webkit-text-stroke-color: darken($blue, 20);
 				text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+				@include transition(0.6s);
+				
+				i {
+					position: absolute;
+					opacity: 0;
+					@include transition(0.6s);
+				}
 				&:before {
 					content: "";
 					display: block;
@@ -251,11 +314,14 @@ header {
 					        border-radius: 10px;
 					z-index: -1;
 				}
+				&:after {
+					@include transition(0.6s);
+				}
 			}
 			a {
 				text-decoration: none;
 			}
-			&:nth-child(1) {
+			&.col-4 {
 				background: url(../img/program-bg-4.jpg) center center no-repeat;
 				@include bgs(cover);
 				p {
@@ -274,7 +340,7 @@ header {
 					}
 				}
 			}
-			&:nth-child(2) {
+			&.col-5 {
 				background: url(../img/program-bg-5.jpg) center center no-repeat;
 				@include bgs(cover);
 				p {
@@ -293,7 +359,7 @@ header {
 					}
 				}
 			}
-			&:nth-child(3) {
+			&.col-6 {
 				background: url(../img/program-bg-6.jpg) center center no-repeat;
 				@include bgs(cover);
 				p {
@@ -322,6 +388,10 @@ header {
 		.space-logo {
 			padding: 0 1rem 1rem 0;
 			@include span(4);
+			
+			img {
+				max-width: 80%;
+			}
 			@include breakpoint($phone) {
 				@include span(12);
 			}
@@ -368,10 +438,10 @@ header {
 				display: none;
 			}
 			img {
-				position: absolute;
-				right: -4%;
-				width: 50%;
-				top: -145px;
+				    position: absolute;
+				    right: -4%;
+				    width: 48%;
+				    top: -150px;
 			}
 		}
 	}
@@ -406,7 +476,8 @@ footer {
 		margin-bottom: 2rem;
 		h4 {
 			color: $white;
-			font-size: 1.5rem;
+			font-size: 1.2rem;
+			text-align: left;
 		}
 	}
 	.form-modal {
@@ -415,17 +486,35 @@ footer {
 				width: 100%;
 				margin-bottom: 1rem;
 				border: none;
+				border-bottom: 1px solid $blue;
 				padding: 0.5rem 1rem;
-				font-size: 2rem;
+				font-size: 1.5rem;
+				background: transparent;
+				color: #FFF;
 				-webkit-border-radius: 10px;
 				        border-radius: 10px;
+			}
+
+			input[type="submit"]{
+				background: $blue;
 			}
 		}
 	}
 	.chuvak {
 		position: absolute;
-		width: 40%;
-    	right: -36%;
-    	top: 13%;
+	    width: 60%;
+	    right: -34%;
+	    top: 5%;
+	    @include breakpoint($tablet) {
+	    	display: none;
+	    }
 	}
 }
+
+
+@media only screen and (min-width: 641px) {
+	.remodal {
+	    max-width: 500px;
+	}
+}
+
